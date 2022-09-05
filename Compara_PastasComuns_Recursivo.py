@@ -1,6 +1,5 @@
 from datetime import datetime
 import os
-import shutil
 from filecmp import dircmp
 
 fonte = "caminho/da/pasta/fonte"
