@@ -11,7 +11,7 @@ for folder in folder_list:
         try:
             lines = file_opened.readlines()
         except Exception as e:
-            print('Exception: ' + str(f) + ' - ' + str(e))
+            print('Exception: ' + str(file) + ' - ' + str(e))
         
         for linha in lines:
             if text_to_search in linha:
