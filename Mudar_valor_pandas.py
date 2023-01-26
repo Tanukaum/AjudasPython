@@ -1,8 +1,8 @@
 import pandas as pd
 
-Table1 = {'Column1': ['50', '25', '75', '50', '10'], 'Column2': ['22', '40', '80', '20', '30']}
+Table1 = {'Column1': ['50', '50', '75', '50', '10'], 'Column2': ['22', '50', '80', '20', '30'], 'Column3': ['22', '40', '80', '20', '30']}
 
-df= pd.DataFrame(Table1, columns=['Column1', 'Column2'])
+df= pd.DataFrame(Table1, columns=['Column1', 'Column2', 'Column3'])
 Values_to_check = ['10', '20', '25', '30']
 
 for value in Values_to_check:

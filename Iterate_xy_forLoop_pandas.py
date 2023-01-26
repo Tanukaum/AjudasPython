@@ -13,4 +13,6 @@ for Value_item in Values_to_check: ##Iterate through the list 'UNIQUE'
                 df.loc[line,column] = 0 #NewValue
    
 
-print(df)
+#print(df)
+#print(df.loc[0])
+print(df.loc[(0,0)])
