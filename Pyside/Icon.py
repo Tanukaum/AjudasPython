@@ -1,23 +1,20 @@
 import sys
 from PySide6.QtCore import Qt, Slot, QTimer
-from PySide6.QtGui import QMovie
+from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QGridLayout, QLineEdit, QPushButton, QVBoxLayout, QWidget)
 
 class Window(QWidget):
     def __init__(self):
         super().__init__()
-        self.setGeometry(100,100,500,400)
-        self.setWindowTitle("Botão")
+        self.setGeometry(100,100,300,100)
+        self.setWindowTitle("Ícone")
+        self.setWindowIcon(QIcon(r'Imgs/icon.ico'))
         self.main_vLayout = QVBoxLayout()
 
-        self.button = QPushButton('Botão Clicável')
-        self.main_vLayout.addWidget(self.button)
-        self.button.clicked.connect(self.clique)
         
         self.setLayout(self.main_vLayout)
 
-    def clique(self):
-        print('Botão clicado!')
+
 
 #Inicialização da Aplicação
 app = QApplication([])

@@ -6,18 +6,21 @@ from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QGridLayout, Q
 class Window(QWidget):
     def __init__(self):
         super().__init__()
-        self.setGeometry(100,100,500,400)
-        self.setWindowTitle("Botão")
+        self.setGeometry(100,100,100,100)
+        self.setWindowTitle("Gif")
         self.main_vLayout = QVBoxLayout()
 
-        self.button = QPushButton('Botão Clicável')
-        self.main_vLayout.addWidget(self.button)
-        self.button.clicked.connect(self.clique)
+        self.label = QLabel(self)
+        self.main_vLayout.addWidget(self.label)
         
+        self.movie = QMovie(r'Imgs\loop.gif')
+        self.label.setMovie(self.movie)
+		
+        self.movie.start()
+
         self.setLayout(self.main_vLayout)
 
-    def clique(self):
-        print('Botão clicado!')
+
 
 #Inicialização da Aplicação
 app = QApplication([])

@@ -1,4 +1,3 @@
-import tkinter as tk
 from tkinter import *
 
 def on_change():
@@ -8,8 +7,10 @@ def on_change():
     else:
         print('0')
 
-root = tk.Tk()
-check_var = tk.BooleanVar()
-tk.Checkbutton(root, text='on/off', variable=check_var, command=on_change).pack()
-root.mainloop()
+master = Tk()
+check_var = BooleanVar()
 
+Checkbutton(master, text='on/off', variable=check_var, command=on_change, height=5).pack()
+#height=5 aumenta a 'zona' clicável do checkbutton
+
+master.mainloop()
