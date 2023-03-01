@@ -1,16 +1,9 @@
 from tkinter import *
 
-def on_change():
-    print(check_var.get())
-    if check_var.get():
-        print('1')
-    else:
-        print('0')
-
 master = Tk()
-check_var = BooleanVar()
+checkbutton_value = BooleanVar()
 
-Checkbutton(master, text='on/off', variable=check_var, command=on_change, height=5).pack()
-#height=5 aumenta a 'zona' clicável do checkbutton
+checkbutton = Checkbutton(master, text= 'on/off', variable=checkbutton_value, height= 5 ).pack()
+# height=5 aumenta a 'zona' clicável do checkbutton
 
-master.mainloop()
+mainloop()
