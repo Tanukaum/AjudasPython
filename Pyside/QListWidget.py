@@ -1,7 +1,8 @@
 import sys
+import random
 from PySide6.QtCore import Qt, Slot, QTimer
-from PySide6.QtGui import QMovie,QFont
-from PySide6.QtWidgets import (QApplication, QListWidget, QLabel, QGridLayout, QLineEdit, QPushButton, QVBoxLayout, QWidget,QSizePolicy)
+from PySide6.QtGui import QMovie,QFont, QColor
+from PySide6.QtWidgets import (QApplication, QListWidget, QLabel, QGridLayout, QLineEdit, QPushButton, QVBoxLayout, QWidget,QListWidgetItem)
 
 class Window(QWidget):
     def __init__(self):
@@ -14,6 +15,13 @@ class Window(QWidget):
         for i in range(5):
             self.list.addItem('item ' + str(i))
         
+        #Cor de cada linha diferente
+        for i in range(5):
+            self.list_item = QListWidgetItem('item ' + str(int(i)+4))
+            self.list_item.setBackground(QColor('#FA' + str(random.randint(0, 5000))))#Gerar cor 'aleatória'
+            self.list.addItem(self.list_item)
+
+
         self.list.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.list.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.list.setMinimumHeight((self.list.sizeHint().height()))
@@ -21,6 +29,7 @@ class Window(QWidget):
         self.list.setFont(QFont('Arial', 14))
         self.main_vLayout.addWidget(self.list)
 
+        
         self.button = QPushButton('Limpar Lista')
         self.main_vLayout.addWidget(self.button)
         self.button.clicked.connect(self.limpar)
