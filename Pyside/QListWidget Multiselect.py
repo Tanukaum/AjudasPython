@@ -1,5 +1,5 @@
 import sys
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, QModelIndex
 from PySide6.QtGui import QFont
 from PySide6.QtWidgets import (QApplication, QListWidget, QVBoxLayout, QWidget, QAbstractItemView, QPushButton)
 
@@ -27,8 +27,8 @@ class Window(QWidget):
 
         self.list.setFont(QFont('Arial', 14))
 
-        self.list.itemClicked.connect(self.printItemText)
-
+        #self.list.itemClicked.connect(self.printItemText)
+        
         self.setLayout(self.main_vLayout)
 
     def printItemText(self):
@@ -42,18 +42,21 @@ class Window(QWidget):
 
     def save_clique(self):
         items = self.list.selectedItems()
-        x = []
-        
+        text = []
+        index = []
+        print(self.list.selectedIndexes())
         for i in range(len(items)):
-            x.append(str(self.list.selectedItems()[i].text()))
-        return x
+            text.append(str(self.list.selectedItems()[i].text()))
+            index.append(str(self.list.selectedIndexes()[i].row()))
+        return text, index
 
     def clique(self):
-        x = self.save_clique()
+        item_text, item_index = self.save_clique()
             
         print('\nPrint pelo botão:  ')
-        for item in x :
-            print(item)
+        for text, index in zip(item_text, item_index) :
+            print(text + ' - ' + index)
+           
 
 
 

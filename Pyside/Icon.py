@@ -8,7 +8,7 @@ class Window(QWidget):
         super().__init__()
         self.setGeometry(100,100,300,100)
         self.setWindowTitle("Ícone")
-        self.setWindowIcon(QIcon(r'Imgs/icon.ico'))
+        self.setWindowIcon(QIcon(r'Pyside/Imgs/icon.ico'))
         self.main_vLayout = QVBoxLayout()
 
         

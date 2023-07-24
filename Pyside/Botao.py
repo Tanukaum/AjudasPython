@@ -17,7 +17,7 @@ class Window(QWidget):
         self.setLayout(self.main_vLayout)
 
     def clique(self):
-        print('Botão clicado!')
+        print(self.button.text())
 
 #Inicialização da Aplicação
 app = QApplication([])
