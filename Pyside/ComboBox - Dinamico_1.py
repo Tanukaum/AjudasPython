@@ -28,6 +28,7 @@ class Window(QWidget):
         self.combobox_1.currentIndexChanged.connect(self.update_combo2)
         self.update_combo2(self.combobox_1.currentIndex())
 
+        self.combobox_2.currentTextChanged.connect(self.get_text)
 		
         self.setLayout(self.main_vLayout)
 
@@ -38,6 +39,8 @@ class Window(QWidget):
         if box_2:
             self.combobox_2.addItems(box_2)
 
+    def get_text(self):
+        print(self.combobox_2.currentText())
     
 
 #Inicialização da Aplicação
