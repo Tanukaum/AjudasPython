@@ -1,0 +1,18 @@
+{
+    "Times": [
+        {
+            "Nome": {
+                "base": "a",
+                "opcional": "x"
+            },
+            "ID": "0"
+        },
+        {
+            "Nome": {
+                "base": "b",
+                "opcional": "z"
+            },
+            "ID": "1"
+        }
+    ]
+}
