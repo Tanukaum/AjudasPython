@@ -6,6 +6,7 @@ for a in range(2):
 print("Original:" )
 print(d)
 
+#Obtém a última posição com len() e insere valor nela
 d.update({len(d):(3,4)})
 d.update({len(d):(4,5)})
 

@@ -1,5 +1,6 @@
 import os
 
+#Preencher com os dados necessários
 path = 'path to folder'
 folder_list = ['name', 'name', 'name']
 text_to_search = 'Test'
